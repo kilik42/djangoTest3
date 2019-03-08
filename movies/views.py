@@ -6,5 +6,5 @@ from .models import Movie
 def index(request):
     movies = Movie.objects.all()
     #Movie.objects.filter(release_year=1984)
-    output = ','.join([m.title for m in movies])
-    return HttpResponse(output)
+    #output = ','.join([m.title for m in movies])
+    return render(request, 'movies/index.html', {'movies': movies})

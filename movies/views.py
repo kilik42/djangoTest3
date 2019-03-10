@@ -8,3 +8,6 @@ def index(request):
     #Movie.objects.filter(release_year=1984)
     #output = ','.join([m.title for m in movies])
     return render(request, 'movies/index.html', {'movies': movies})
+
+def detail(request, movie_id):
+    return HttpResponse(movie_id)
